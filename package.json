@@ -1,11 +1,12 @@
 {
-  "name": "M5D2_Backend",
+  "name": "day3",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon -e js ./src/server.js"
   },
   "repository": {
     "type": "git",
@@ -19,8 +20,12 @@
   },
   "homepage": "https://github.com/ingrid-oncken/M5D2_Backend#readme",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "express-list-endpoints": "^6.0.0",
     "uniqid": "^5.3.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12"
   }
 }
