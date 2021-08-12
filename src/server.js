@@ -4,10 +4,11 @@ import authorsRouter from "./services/authors/index.js"
 import blogRouter from "./services/blog/index.js"
 import cors from "cors"
 
+//server to listen on the port, it is stores into a variable
 const server = express()
 const port = 3001
 
-//*********** MIDDLEWARES ***************************
+//*********** MIDDLEWARE ***************************
 
 const loggerMiddleware = (req, res, next) => {
   console.log(`Req method ${req.method} -- Req URL ${req.url} -- ${new Date()}`)
