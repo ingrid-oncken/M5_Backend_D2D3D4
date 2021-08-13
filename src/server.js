@@ -17,8 +17,10 @@ const loggerMiddleware = (req, res, next) => {
 
 server.use(loggerMiddleware)
 //cors and express are middlewares
-server.use(cors())
-server.use(express.json()) //I don't really know I wrote this line
+server.use(cors()) //cors connect BE with FE
+
+//this has to be specified BEFORE the routes, otherwise the body will be undefined, and 
+server.use(express.json()) 
 
 server.use("/authors", authorsRouter)
 server.use("/blogPosts", blogRouter)
