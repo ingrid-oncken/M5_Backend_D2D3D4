@@ -1,7 +1,7 @@
 import express from "express"
+import createHttpError from "http-errors"
 import uniqid from "uniqid"
 import { getBlogPosts, writeBlogPosts } from "../../lib/fs-tools.js"
-
 
 // console.log({ blogPostsJSONPath })
 const blogRouter = express.Router()
@@ -35,11 +35,20 @@ blogRouter.delete("/:id", (req, res) => {
 })
 
 //GET Single
-blogRouter.get("/:id", (req, res) => {
-  const blogPosts = getBlogPosts()
+blogRouter.get("/:id", (req, res, next) => {
+  try {
+    const blogPosts = getBlogPosts()
 
-  const blogPost = blogPosts.find((bp) => bp.id === req.params.id)
-  res.send(blogPost)
+    const blogPost = blogPosts.find((bp) => bp.id === req.params.id)
+
+    if (blogPost) {
+      res.send(blogPost)
+    } else {
+      next(createHttpError(404, `Blog Post with ID ${req.params.id} not found`))
+    }
+  } catch (error) {
+    next(error)
+  }
 })
 
 //PUT

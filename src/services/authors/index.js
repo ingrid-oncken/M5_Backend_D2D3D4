@@ -2,6 +2,8 @@
 import express, { response } from "express"
 import uniqid from "uniqid"
 import { request } from "http"
+import { validationResult } from "express-validator"
+import { authorsValidadtionMiddleware } from "./validation"
 
 //express.Router() create the endpoints, creates a set ofExpress routes
 const authorsRouter = express.Router()
@@ -17,7 +19,7 @@ const authorsRouter = express.Router()
 // const authorsJSONPath = join(currentDirPath, "authors.json")
 // console.log(authorsJSONPath)
 
-authorsRouter.post("/", (req, res) => {
+authorsRouter.post("/", authorsValidadtionMiddleware, (req, res) => {
   console.log(req.body)
   console.log(uniqid())
 

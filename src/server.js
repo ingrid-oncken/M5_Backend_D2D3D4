@@ -3,6 +3,12 @@ import listEndpoints from "express-list-endpoints"
 import authorsRouter from "./services/authors/index.js"
 import blogRouter from "./services/blog/index.js"
 import cors from "cors"
+import {
+  notFoundError,
+  badRequestError,
+  forbidenError,
+  genericServerError,
+} from "./errorHandlers.js"
 
 //server to listen on the port, it is stores into a variable
 const server = express()
@@ -19,14 +25,19 @@ server.use(loggerMiddleware)
 //cors and express are middlewares
 server.use(cors()) //cors connect BE with FE
 
-//this has to be specified BEFORE the routes, otherwise the body will be undefined, and 
-server.use(express.json()) 
+//this has to be specified BEFORE the routes, otherwise the body will be undefined, and
+server.use(express.json())
 
 server.use("/authors", authorsRouter)
 
 server.use("/blogPosts", blogRouter)
 
 console.table(listEndpoints(server))
+
+server.use(notFoundError)
+server.use(badRequestError)
+server.use(forbidenError)
+server.use(genericServerError)
 
 server.listen(port, () => {
   console.log("Server listening to the port " + port)
