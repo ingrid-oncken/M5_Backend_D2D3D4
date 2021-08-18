@@ -1,8 +1,5 @@
 //here I get, put, post
 import express, { response } from "express"
-import { fileURLToPath } from "url"
-import { dirname, join } from "path"
-import fs from "fs-extra"
 import uniqid from "uniqid"
 import { request } from "http"
 
@@ -11,14 +8,14 @@ const authorsRouter = express.Router()
 
 //import.meta.url give us info about the url of the current module
 //fileURLToPath converts that url into a path
-const currentFilePath = fileURLToPath(import.meta.url)
+// const currentFilePath = fileURLToPath(import.meta.url)
 
 //dirname extracts the directory name from the specified path
-const currentDirPath = dirname(currentFilePath)
+// const currentDirPath = dirname(currentFilePath)
 
 //join is the safest way to concatenate two paths together
-const authorsJSONPath = join(currentDirPath, "authors.json")
-console.log(authorsJSONPath)
+// const authorsJSONPath = join(currentDirPath, "authors.json")
+// console.log(authorsJSONPath)
 
 authorsRouter.post("/", (req, res) => {
   console.log(req.body)

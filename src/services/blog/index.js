@@ -1,25 +1,10 @@
 import express from "express"
-import fs from "fs-extra"
-import { fileURLToPath } from "url"
-import { dirname, join } from "path"
 import uniqid from "uniqid"
-const blogPostsJSONPath = join(
-  dirname(fileURLToPath(import.meta.url)),
-  "blogPosts.json"
-)
+import { getBlogPosts, writeBlogPosts } from "../../lib/fs-tools.js"
 
-console.log({ blogPostsJSONPath })
+
+// console.log({ blogPostsJSONPath })
 const blogRouter = express.Router()
-
-//Reading the file, getting all blogPosts
-const getBlogPosts = () => {
-  const contentAsBuffer = fs.readFileSync(blogPostsJSONPath)
-  return JSON.parse(contentAsBuffer)
-}
-
-//writing the file into a function that can be reused
-const writeBlogPosts = (content) =>
-  fs.writeFileSync(blogPostsJSONPath, JSON.stringify(content))
 
 //GET
 blogRouter.get("/", (req, res) => {
