@@ -1,12 +1,14 @@
 import express from "express"
-import fs from "fs"
+import fs from "fs-extra"
 import { fileURLToPath } from "url"
 import { dirname, join } from "path"
-
+import uniqid from "uniqid"
 const blogPostsJSONPath = join(
-  dirname(fileURLToPath(import.meta.url), "blogPosts.json")
+  dirname(fileURLToPath(import.meta.url)),
+  "blogPosts.json"
 )
 
+console.log({ blogPostsJSONPath })
 const blogRouter = express.Router()
 
 //Reading the file, getting all blogPosts
@@ -58,14 +60,14 @@ blogRouter.get("/:id", (req, res) => {
 //PUT
 blogRouter.put("/:id", (req, res) => {
   const blogPosts = getBlogPosts()
-
-  const modifiedBlogPost = { ...req.body, id: req.params.id }
+  const prevData = blogPosts.find((bp) => bp.id === req.params.id)
+  const modifiedBlogPost = { ...prevData, ...req.body, id: req.params.id }
 
   const remainingBlogPosts = blogPosts.filter((bp) => bp.id !== req.params.id)
   remainingBlogPosts.push(modifiedBlogPost)
 
   writeBlogPosts(remainingBlogPosts)
-  res.send(modifiedBlogPost)
+  res.status(204).send(modifiedBlogPost)
 })
 
 export default blogRouter

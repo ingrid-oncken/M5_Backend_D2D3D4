@@ -2,7 +2,7 @@
 import express, { response } from "express"
 import { fileURLToPath } from "url"
 import { dirname, join } from "path"
-import fs from "fs"
+import fs from "fs-extra"
 import uniqid from "uniqid"
 import { request } from "http"
 

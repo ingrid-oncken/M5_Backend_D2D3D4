@@ -23,6 +23,7 @@ server.use(cors()) //cors connect BE with FE
 server.use(express.json()) 
 
 server.use("/authors", authorsRouter)
+
 server.use("/blogPosts", blogRouter)
 
 console.table(listEndpoints(server))
