@@ -15,9 +15,15 @@ blogRouter.get("/", blogPostValidationMiddleware, (req, res) => {
 })
 
 //POST
-blogRouter.post("/", (req, res) => {
-  const blogPosts = getBlogPosts()
-  const newBlogPost = { ...req.body, id: uniqid(), createdAt: new Date() }
+blogRouter.post("/", blogPostValidationMiddleware, (req, res) => {
+  const errorList = validationResult(req)
+
+  if (!errorList.isEmpty()) {
+    res.status(400).send(errorList)
+  } else {
+    const newBlogPost = { ...req.body, id: uniqid(), createdAt: new Date() }
+    const blogPosts = getBlogPosts()
+  }
 
   blogPosts.push(newBlogPost)
 
