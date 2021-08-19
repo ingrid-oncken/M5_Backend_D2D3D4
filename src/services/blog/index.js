@@ -2,12 +2,14 @@ import express from "express"
 import createHttpError from "http-errors"
 import uniqid from "uniqid"
 import { getBlogPosts, writeBlogPosts } from "../../lib/fs-tools.js"
+import { validationResult } from "express-validator"
+import { blogPostValidationMiddleware } from "./validation.js"
 
 // console.log({ blogPostsJSONPath })
 const blogRouter = express.Router()
 
 //GET
-blogRouter.get("/", (req, res) => {
+blogRouter.get("/", blogPostValidationMiddleware, (req, res) => {
   const blogPosts = getBlogPosts()
   res.send(blogPosts)
 })

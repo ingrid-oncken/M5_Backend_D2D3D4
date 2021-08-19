@@ -1,1 +1,62 @@
-[{"_id":"SERVER GENERATED ID","category":"ARTICLE CATEGORY","title":"ARTICLE TITLE","cover":"ARTICLE COVER (IMAGE LINK)","readTime":{"value":2,"unit":"minute"},"author":{"name":"AUTHOR AVATAR NAME","avatar":"AUTHOR AVATAR LINK"},"content":"HTML","createdAt":"NEW DATE"},{"category":"aaa","title":"ARTICLE TITLE","cover":"ARTICLE COVER (IMAGE LINK)","readTime":{"value":2,"unit":"minute"},"author":{"name":"AUTHOR AVATAR NAME","avatar":"AUTHOR AVATAR LINK"},"content":"HTML","id":"glpjpa8mfkshhxj5a","createdAt":"2021-08-18T12:53:50.253Z"},{"category":"incentivize","title":"Assurance","cover":"http://placeimg.com/640/480","readTime":{"value":"445","unit":"minute"},"author":{"name":"Jadon","avatar":"http://placeimg.com/640/480"},"content":"Commodi quia amet animi quis cum quo. Quia nihil earum. Et similique officiis officiis in maxime. Aspernatur est mollitia quaerat rerum soluta voluptate. Doloremque exercitationem dolor sunt explicabo nesciunt dolor rem corrupti.","id":"glpjpa8svkshipzhg","createdAt":"2021-08-18T13:15:57.795Z"},{"category":"Cotton","title":"GB","cover":"http://placeimg.com/640/480","readTime":{"value":"208","unit":"minute"},"author":{"name":"Minerva","avatar":"http://placeimg.com/640/480"},"content":"Rem vel quae autem aut mollitia. Sequi quos minima aspernatur omnis repellendus ipsum consectetur.","id":"glpjpa8svkshiq0w2","createdAt":"2021-08-18T13:15:59.618Z"},{"category":"Accountability","title":"monitoring","cover":"http://placeimg.com/640/480","readTime":{"value":"776","unit":"minute"},"author":{"name":"Garfield","avatar":"http://placeimg.com/640/480"},"content":"Soluta architecto doloremque. Ullam qui quas nulla aut itaque sunt delectus sequi laboriosam. Temporibus sit modi quod.","id":"glpjpa8svkshiq1s3","createdAt":"2021-08-18T13:16:00.772Z"},{"category":"harness","title":"Lead","cover":"http://placeimg.com/640/480","readTime":{"value":"7","unit":"minute"},"author":{"name":"Jesse","avatar":"http://placeimg.com/640/480"},"content":"Eum sunt voluptatem quod mollitia magni pariatur consequatur quia autem. Et ea amet et velit sed similique vel qui vel. Quasi qui aut velit. Voluptatibus voluptatem commodi recusandae quas molestias sunt sit aut.","id":"glpjpa8svkshiq2ib","createdAt":"2021-08-18T13:16:01.715Z"}]
+[
+  {
+    "_id": "SERVER GENERATED ID",
+    "category": "ARTICLE CATEGORY",
+    "title": "ARTICLE TITLE",
+    "cover": "ARTICLE COVER (IMAGE LINK)",
+    "readTime": { "value": 2, "unit": "minute" },
+    "author": { "name": "AUTHOR AVATAR NAME", "avatar": "AUTHOR AVATAR LINK" },
+    "content": "HTML",
+    "createdAt": "NEW DATE"
+  },
+  {
+    "category": "aaa",
+    "title": "ARTICLE TITLE",
+    "cover": "ARTICLE COVER (IMAGE LINK)",
+    "readTime": { "value": 2, "unit": "minute" },
+    "author": { "name": "AUTHOR AVATAR NAME", "avatar": "AUTHOR AVATAR LINK" },
+    "content": "HTML",
+    "id": "glpjpa8mfkshhxj5a",
+    "createdAt": "2021-08-18T12:53:50.253Z"
+  },
+  {
+    "category": "incentivize",
+    "title": "Assurance",
+    "cover": "http://placeimg.com/640/480",
+    "readTime": { "value": "445", "unit": "minute" },
+    "author": { "name": "Jadon", "avatar": "http://placeimg.com/640/480" },
+    "content": "Commodi quia amet animi quis cum quo. Quia nihil earum. Et similique officiis officiis in maxime. Aspernatur est mollitia quaerat rerum soluta voluptate. Doloremque exercitationem dolor sunt explicabo nesciunt dolor rem corrupti.",
+    "id": "glpjpa8svkshipzhg",
+    "createdAt": "2021-08-18T13:15:57.795Z"
+  },
+  {
+    "category": "Cotton",
+    "title": "GB",
+    "cover": "http://placeimg.com/640/480",
+    "readTime": { "value": "208", "unit": "minute" },
+    "author": { "name": "Minerva", "avatar": "http://placeimg.com/640/480" },
+    "content": "Rem vel quae autem aut mollitia. Sequi quos minima aspernatur omnis repellendus ipsum consectetur.",
+    "id": "glpjpa8svkshiq0w2",
+    "createdAt": "2021-08-18T13:15:59.618Z"
+  },
+  {
+    "category": "Accountability",
+    "title": "monitoring",
+    "cover": "http://placeimg.com/640/480",
+    "readTime": { "value": "776", "unit": "minute" },
+    "author": { "name": "Garfield", "avatar": "http://placeimg.com/640/480" },
+    "content": "Soluta architecto doloremque. Ullam qui quas nulla aut itaque sunt delectus sequi laboriosam. Temporibus sit modi quod.",
+    "id": "glpjpa8svkshiq1s3",
+    "createdAt": "2021-08-18T13:16:00.772Z"
+  },
+  {
+    "category": "harness",
+    "title": "Lead",
+    "cover": "http://placeimg.com/640/480",
+    "readTime": { "value": "7", "unit": "minute" },
+    "author": { "name": "Jesse", "avatar": "http://placeimg.com/640/480" },
+    "content": "Eum sunt voluptatem quod mollitia magni pariatur consequatur quia autem. Et ea amet et velit sed similique vel qui vel. Quasi qui aut velit. Voluptatibus voluptatem commodi recusandae quas molestias sunt sit aut.",
+    "id": "glpjpa8svkshiq2ib",
+    "createdAt": "2021-08-18T13:16:01.715Z"
+  }
+]

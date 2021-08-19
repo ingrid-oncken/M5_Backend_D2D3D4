@@ -23,20 +23,26 @@ authorsRouter.post("/", authorsValidadtionMiddleware, (req, res) => {
   console.log(req.body)
   console.log(uniqid())
 
-  //1. read the request body obtaining the new authors data
-  const newAuthor = { ...req.body, ID: uniqid(), creatAt: new Date() }
+  const errorList = validationResult(req)
 
-  //2. read the content of authors.json file
-  const authors = JSON.parse(fs.readFileSync(authorsJSONPath))
+  if (!errorList.isEmpty()) {
+    res.status(400).send(errorList)
+  } else {
+    //1. read the request body obtaining the new authors data
+    const newAuthor = { ...req.body, ID: uniqid(), creatAt: new Date() }
 
-  //3. adding/pushing new author to the array
-  authors.push(newAuthor)
+    //2. read the content of authors.json file
+    const authors = JSON.parse(fs.readFileSync(authorsJSONPath))
 
-  //4. rewrite the array including the new author, into the authors.json file
-  fs.writeFileSync(authorsJSONPath, JSON.stringify(authors))
+    //3. adding/pushing new author to the array
+    authors.push(newAuthor)
 
-  //5. sending back the response with extra info like id
-  res.status(201).send({ ID: newAuthor.ID })
+    //4. rewrite the array including the new author, into the authors.json file
+    fs.writeFileSync(authorsJSONPath, JSON.stringify(authors))
+
+    //5. sending back the response with extra info like id
+    res.status(201).send({ ID: newAuthor.ID })
+  }
 })
 
 authorsRouter.get("/", (req, res) => {
